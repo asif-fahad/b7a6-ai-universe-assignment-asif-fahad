@@ -3,12 +3,13 @@ const loadMyAI = async () => {
     const data = await res.json();
     // console.log(data.data.tools);
     showAllCards(data.data.tools.slice(0, 6));
+    
 };
+
 loadMyAI();
 
 const showAllCards = (cards) => {
-    
-    // console.log(cards.data.tools[0])
+    toggleSpinner(true)
     const cardsContainer = document.getElementById('cards-container');
     cardsContainer.innerHTML = ' ';
     
@@ -18,6 +19,7 @@ const showAllCards = (cards) => {
         showAll.classList.remove('d-none')
     }
     else{
+        
         showAll.classList.add('d-none')
     }
     
@@ -47,6 +49,7 @@ const showAllCards = (cards) => {
     </div>
     `;
     cardsContainer.appendChild(cardDiv);
+    // spinner off
     toggleSpinner(false)
     });
 }
@@ -66,12 +69,8 @@ const seeMoreData = async () => {
     const data = await res.json();
     // console.log(data.data.tools);
     showAllCards(data.data.tools);
+    
 }
-
-// document.getElementById('btn-show-all').addEventListener('click', function(){
-//     toggleSpinner(true)
-//     showAllCards(cards)
-// })
 
 
 const fetchModalDetail = (id) => {
@@ -79,6 +78,7 @@ const fetchModalDetail = (id) => {
     fetch(url)
         .then((res) => res.json())
         .then((data) => showModalDetail(data.data));
+    
 };
 
 const showModalDetail = (modalDetail) => {
