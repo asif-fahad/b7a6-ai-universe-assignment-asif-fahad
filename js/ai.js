@@ -128,7 +128,7 @@ const showModalDetail = (modalDetail) => {
                   <div class="card">
                   
                     <img id="modal-img" src="${modalDetail.image_link[0] ? modalDetail.image_link[0] : " "}" class="card-img-top" alt="...">
-                    <div id="accuracy-btn" class="fs-6 fw-light text-white bg-danger position-absolute top-0 end-0">${modalDetail.accuracy.score*100 ? modalDetail.accuracy.score*100 : ' '}% accuracy</div>
+                    <button id="accuracy-btn" class="fs-6 fw-light text-white bg-danger position-absolute top-0 end-0 border-0">${modalDetail.accuracy.score*100 ? modalDetail.accuracy.score*100 : ' '}% accuracy</button>
                     <div class="card-body text-center">
                       <h5 class="card-title">${modalDetail.input_output_examples[0].input}
                       </h5>
@@ -139,5 +139,5 @@ const showModalDetail = (modalDetail) => {
                 </div>
               </div>
     `
-
+    
 }
