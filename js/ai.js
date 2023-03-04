@@ -29,7 +29,7 @@ const showAllCards = (cards) => {
         cardDiv.classList.add('col');
         cardDiv.innerHTML = `
     <div class="card h-100 p-3">
-     <img src="${card.image}" class="card-img-top img-fluid" alt="...">
+     <img src="${card.image}" class="card-img-top" alt="...">
      <h5>Features</h5>
      <ol>
      <li>${card.features[0]}</li>
@@ -143,6 +143,6 @@ const showModalDetail = (modalDetail) => {
 }
 
 const sortByDate = () => {
-    
+
 }
 
