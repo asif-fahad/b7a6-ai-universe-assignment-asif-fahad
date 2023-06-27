@@ -94,36 +94,36 @@ const showModalDetail = (modalDetail) => {
                 <div class="col">
                   <div class="card">
                     <div class="card-body bg-danger p-2 text-dark bg-opacity-10">
-                      <h5 class="card-title">${modalDetail.description === null ? " " : modalDetail.description}</h5>
+                      <h5 class="card-title">${modalDetail?.description === null ? " " : modalDetail?.description}</h5>
                       <div class="d-flex gap-1">
                         <div class="border bg-white text-success">
-                        ${modalDetail.pricing[0].price ? modalDetail.pricing[0].price : "Free of Cost"}
-                        ${modalDetail.pricing[0].plan}
+                        ${modalDetail?.pricing[0].price ? modalDetail?.pricing[0].price : "Free of Cost"}
+                        ${modalDetail?.pricing[0].plan}
                         </div>
                         <div class="border bg-white text-primary-emphasis">
-                        ${modalDetail.pricing[1].price ? modalDetail.pricing[1].price : "Free of Cost"}
-                        ${modalDetail.pricing[1].plan}
+                        ${modalDetail?.pricing[1].price ? modalDetail?.pricing[1].price : "Free of Cost"}
+                        ${modalDetail?.pricing[1].plan}
                         </div>
                         <div class="border bg-white text-danger-emphasis">
-                        ${modalDetail.pricing[2].price ? modalDetail.pricing[2].price : "Free of Cost"}
-                        ${modalDetail.pricing[2].plan}
+                        ${modalDetail?.pricing[2].price ? modalDetail?.pricing[2].price : "Free of Cost"}
+                        ${modalDetail?.pricing[2].plan}
                         </div>
                       </div>
                       <div class="d-flex">
                         <div>
                         <h5>Features</h5>
                         <ul>
-                            <li>${modalDetail.features[1].feature_name ? modalDetail.features[1].feature_name : "No Data Found"}</li>
-                            <li>${modalDetail.features[2].feature_name ? modalDetail.features[1].feature_name : "No Data Found"}</li>
-                            <li>${modalDetail.features[3].feature_name ? modalDetail.features[1].feature_name : "No Data Found"}</li>
+                            <li>${modalDetail?.features[1].feature_name ? modalDetail?.features[1].feature_name : "No Data Found"}</li>
+                            <li>${modalDetail?.features[2].feature_name ? modalDetail?.features[1].feature_name : "No Data Found"}</li>
+                            <li>${modalDetail?.features[3].feature_name ? modalDetail?.features[1].feature_name : "No Data Found"}</li>
                         </ul>
                         </div>
                         <div>
                         <h5>Integrations</h5>
                         <ul>
-                            <li>${modalDetail.integrations[0] ? modalDetail.integrations[0] : "No Data Found"}</li>
-                            <li>${modalDetail.integrations[1] ? modalDetail.integrations[0] : "No Data Found"}</li>
-                            <li>${modalDetail.integrations[2] ? modalDetail.integrations[0] : "No Data Found"}</li>
+                            <li>${modalDetail?.integrations[0] ? modalDetail?.integrations[0] : "No Data Found"}</li>
+                            <li>${modalDetail?.integrations[1] ? modalDetail?.integrations[0] : "No Data Found"}</li>
+                            <li>${modalDetail?.integrations[2] ? modalDetail?.integrations[0] : "No Data Found"}</li>
                         </ul>
                         </div>
                       </div>
@@ -133,12 +133,14 @@ const showModalDetail = (modalDetail) => {
                 <div class="col">
                   <div class="card">
                   
-                    <img id="modal-img" src="${modalDetail.image_link[0] ? modalDetail.image_link[0] : " "}" class="card-img-top" alt="...">
-                    <button id="accuracy-btn" class="fs-6 fw-light text-white bg-danger position-absolute top-0 end-0 border-0">${modalDetail.accuracy.score*100 ? modalDetail.accuracy.score*100 : ' '}% accuracy</button>
+                    <img id="modal-img" src="${modalDetail?.image_link[0] ? modalDetail?.image_link[0] : " "}" class="card-img-top" alt="...">
+                    ${modalDetail?.accuracy.score
+                      ? `<button id="accuracy-btn" class="fs-6 fw-light text-white bg-danger position-absolute top-0 end-0 border-0">${modalDetail?.accuracy.score * 100}% accuracy</button>`
+                      : ''}
                     <div class="card-body text-center">
-                      <h5 class="card-title">${modalDetail.input_output_examples[0].input}
+                      <h5 class="card-title">${modalDetail?.input_output_examples[0].input}
                       </h5>
-                      <p class="card-text">${modalDetail.input_output_examples[0].output}</p>
+                      <p class="card-text">${modalDetail?.input_output_examples[0].output}</p>
                     </div>
                   </div>
                 </div>
